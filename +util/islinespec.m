@@ -1,0 +1,6 @@
+function is_lspec = islinespec(lspec)
+%Checks weather is a valid matlab line specification (eg '--k' '-ro')...
+%This is hard tio check, thus we do not allow Marker Specifiers like 'square' 'diamond'. Use short ones instead.
+is_lspec = ischar(lspec) && length(lspec)<4 ...
+            && any(strcmp(lspec(1),{'-' ':' '+' 'o' '*' '.' 'x' 's' 'd' '^' 'v' '<' '>' 'p' 'h' 'r' 'g' 'b' 'c' 'm' 'y' 'k' 'w'}));
+end
